@@ -51,13 +51,15 @@
                                 @endif
                             </li>
                         @else
-                            <li class="nav-item" style="display:flex; justify-content: center;align-items: center;">
-                                <a class="navbar-brand" href="{{ route('user_list') }}" style="font-size:13px">
-                                    {{ __('ユーザ一覧') }}
-                                    <!-- {{ config('app.name', 'Laravel') }} -->
-                                </a>
-                            </li>
 
+                        <?php
+                            // <li class="nav-item" style="display:flex; justify-content: center;align-items: center;">
+                            //     <a class="navbar-brand" href="{{ route('user_list') }}" style="font-size:13px">
+                            //         {{ __('ユーザ一覧') }}
+                            //         <!-- {{ config('app.name', 'Laravel') }} -->
+                            //     </a>
+                            // </li>
+                        ?>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -84,12 +86,16 @@
                             <div id="inline" style="display:none;" >
                                 <h4>ツイートする</h4>
 
-                                {!! Form::open(['id' => 'formTweet', 'url' => 'tweet/', 'enctype' => 'multipart/form-data']) !!}
+
+                                {!! Form::open(['id' => 'formTweet', 'url' => '/tweet/create', 'enctype' => 'multipart/form-data']) !!}
                                     {!! Form::textarea('body', null, ['name' => 'tweet', 'class' => 'form-control', 'placeholder' => '今なにしてる？', 'rows' => '4']) !!}
                                     <button id="btnTweet" type="button" class="btn btn-primary" style="margin-top:10px;float:right;margin-bottom:10px">
                                         {{ __('ツイート') }}
                                     </button>
                                 {!! Form::close() !!}
+
+
+
                             </div>
                         @endguest
                     </ul>
