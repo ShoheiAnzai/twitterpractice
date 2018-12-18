@@ -25,4 +25,5 @@ Route::get('/same1', 'SameController@index')->name('same1');
 
 Route::get('/same2', 'SameController@index2')->name('same2');
 
+Route::get('/tweet', 'TweetController@index')->name('tweet');
 
