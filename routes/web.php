@@ -27,7 +27,7 @@ Route::get('/same2', 'SameController@index2')->name('same2');
 
 Route::get('/tweet', 'TweetController@index')->name('tweet');
 
-Route::get('/tweet', 'TweetController@index')->name('tweet');
-
 Route::post('/tweet/create', 'TweetController@create')->name('create');
+
+
 
