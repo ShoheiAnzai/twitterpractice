@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//name以下はなくてもいい。artisanコマンドでroutesって打つときに見やすくなるだけ?
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/menu', 'MenuController@index')->name('menu');
@@ -29,5 +31,5 @@ Route::get('/tweet', 'TweetController@index')->name('tweet');
 
 Route::post('/tweet/create', 'TweetController@create')->name('create');
 
-
+Route::get('/user', 'UserController@index')->name('user');
 

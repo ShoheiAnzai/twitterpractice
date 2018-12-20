@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Follow;
+
 
 class SameController extends Controller
 {
@@ -15,7 +18,10 @@ class SameController extends Controller
     // {
     //     $this->middleware('auth');
     // }
+    public function __construct()
+    {
 
+    }
     /**
      * Show the application dashboard.
      *
@@ -23,18 +29,11 @@ class SameController extends Controller
      */
     public function index()
     {
+//followテーブルが取れているか確認
+    $user = User::find(1);
+    //もしくはUser::where('id'=>1)->get();など findby も
+    dd($user->follows);
 
-        $string = "10";
-
-        return view('layouts.same1',["name" => $string]);
-   
-
-
-    }
-
-    public function index2()
-    {
-        return view('layouts.same1');
     }
 
 
