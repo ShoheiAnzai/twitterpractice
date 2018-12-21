@@ -33,3 +33,8 @@ Route::post('/tweet/create', 'TweetController@create')->name('create');
 
 Route::get('/user', 'UserController@index')->name('user');
 
+//フォローボタンを押されるとコントローラーに
+Route::post('/users/follow', 'UserController@index2')->name('follow');
+
+
+

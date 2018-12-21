@@ -48,6 +48,9 @@
 
                               @if(!in_array( $user->id, $follow_id_list))
 
+                              <!-- Formはヘルパーと呼ばれているもの。HTMLとして出力する。bladeの構文。-->
+
+
                                 {!! Form::open(['id' => 'formTweet', 'url' => 'users/follow/', 'enctype' => 'multipart/form-data']) !!}
                                     {{Form::hidden('followId', $user->id, ['id' => 'followId'])}}
                                     <button type="submit" class="btn btn-light">

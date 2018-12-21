@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Follow;
 
 class UserController extends Controller
 {
@@ -43,5 +44,25 @@ class UserController extends Controller
     	return view('list',['users' => $users, 'follow_id_list' => $follow_id_list]);
 
     }
+
+    public function index2(Request $request)
+    {
+        
+    //フォローボタンを押すとここに飛ばされる。送られてきた情報をもとに、DBのfollowテーブルに値を追加していく。その値をlistに返す。                                
+    //idとurlとenctypeの情報をfollowに反映する。
+        $follow = new Follow;
+        $follow -> follows_id = $request -> followId;
+        $follow -> user_id = Auth::id();  
+        $follow -> save();
+
+        return redirect('/user');
+
+
+    }
+
+
+
+
+    
 
 }
