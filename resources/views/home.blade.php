@@ -11,6 +11,8 @@
                 <!-- //@FIXME ツイートを一覧で表示  -->
 
                     @foreach($TweetDate as $tweets)
+
+
                 
                     <div class="card-body">
                         <!-- //@FIXME ツイートを表示 --> 
@@ -35,6 +37,7 @@
                      @endforeach
             </div>
 
+                {{$TweetDate->links()}}
 
 
                    

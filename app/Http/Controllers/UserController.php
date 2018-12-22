@@ -31,8 +31,15 @@ class UserController extends Controller
 
 	  //アクセスしてる人のidを持ってくる。
     //dd( Auth::id());
+
+        //
+
+
+
     	$my_user = User::find(Auth::id());
     	$follow_id_list = [];
+
+
 
     	foreach($my_user->follows as $key => $follow){
     		$follow_id_list[] = $follow->follows_id;
@@ -48,7 +55,7 @@ class UserController extends Controller
     public function index2(Request $request)
     {
         
-    //フォローボタンを押すとここに飛ばされる。送られてきた情報をもとに、DBのfollowテーブルに値を追加していく。その値をlistに返す。                                
+    //フォローボタンを押すとここに飛ばされる。送られてきた情報をもとに、DBのfollowテーブルに値を追加していく。その値をlistに返す。                        
     //idとurlとenctypeの情報をfollowに反映する。
         $follow = new Follow;
         $follow -> follows_id = $request -> followId;
@@ -59,10 +66,6 @@ class UserController extends Controller
 
 
     }
-
-
-
-
     
 
 }

@@ -31,5 +31,7 @@ class User extends Authenticatable
     public function follows()
     {
         return $this->hasMany('App\Follow','user_id','id'); 
+
+        //とってきたidが、Followのuser_idと全く一緒だったときにfollowsに格納。
     }
 }
